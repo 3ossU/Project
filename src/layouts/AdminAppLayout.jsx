@@ -7,6 +7,7 @@ const AdminAppLayout = () => {
     <>
     <AdminNavbar/>
     <Outlet/>
+    {/* footer */}
     </> 
     );
 }

@@ -7,6 +7,11 @@ import Sellerlist from './page/sellerlist'
 import Verify from './page/verify'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AdminAppLayout from './layouts/AdminAppLayout'
+import Home from './page/Home'
+import Propertie from './page/Propertie'
+import TradingGuide from './page/TradingGuide'
+import Login from './page/Login'
+import UserAppLayout from './layouts/UserAppLayout'
 
 function App() {
 
@@ -14,11 +19,18 @@ function App() {
     
     <BrowserRouter basename='/multipages/'>
     <Routes>
-      <Route element={<AdminAppLayout/>}>
+      {/* ดึงlayout */}
+      <Route element={<AdminAppLayout/>}> 
       <Route path='buyerlist' element={<BuyerList/>}/>
       <Route path='sellerlist' element={<Sellerlist/>}/>
       <Route path='stat' element={<Stat/>}/>
       <Route path='verify' element={<Verify/>}/>
+      </Route>
+      <Route element={<UserAppLayout/>}> 
+      <Route path='home' element={<Home/>}/>
+      <Route path='propertie' element={<Propertie/>}/>
+      <Route path='tradingguide' element={<TradingGuide/>}/>
+      <Route path='login' element={<Login/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

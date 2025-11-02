@@ -12,6 +12,7 @@ import Propertie from './page/Propertie'
 import TradingGuide from './page/TradingGuide'
 import Login from './page/Login'
 import UserAppLayout from './layouts/UserAppLayout'
+import ForwardToLogin from './page/ForwardToLogin'
 
 function App() {
 
@@ -25,12 +26,14 @@ function App() {
       <Route path='sellerlist' element={<Sellerlist/>}/>
       <Route path='stat' element={<Stat/>}/>
       <Route path='verify' element={<Verify/>}/>
+      <Route path='*' element={<ForwardToLogin />} />
       </Route>
       <Route element={<UserAppLayout/>}> 
       <Route path='home' element={<Home/>}/>
       <Route path='propertie' element={<Propertie/>}/>
       <Route path='tradingguide' element={<TradingGuide/>}/>
       <Route path='login' element={<Login/>}/>
+      <Route path='*' element={<ForwardToLogin />} />
       </Route>
     </Routes>
     </BrowserRouter>

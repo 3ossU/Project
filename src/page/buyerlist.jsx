@@ -1,12 +1,12 @@
 import AdminNavbar from "../componants/adminnavbar";
 
-const Verify = () => {
+const BuyerList = () => {
     return ( 
     <>
     
-    <h1>verify</h1>
+    <h1>buy</h1>
     </> 
     );
 }
  
-export default Verify;
+export default BuyerList;

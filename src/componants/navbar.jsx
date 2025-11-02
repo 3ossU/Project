@@ -47,6 +47,7 @@ const NavBar = () => {
 
                     {/* เมนูหลัก */}
                     <div className="flex items-center space-x-6 gap-5">
+                        
                         <a href="#" className="Menu text-white">HOME</a>
                         <a href="#" className="Menu text-white">PROPERTIES</a>
                         <a href="#" className="Menu text-white">TRADING GUIDE</a>

@@ -4,8 +4,8 @@ import NavBar from "../componants/navbar";
 const Stat = () => {
     return ( 
     <>
-    <AdminNavbar/>
-        
+    
+        <h1>stat</h1>
 
     </> 
     );

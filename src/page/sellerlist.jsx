@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import AdminNavbar from "../componants/adminnavbar";
 import { fetchUsers } from "../Data/UserData";
-import { Table, InputGroup, Form, Button } from "react-bootstrap";
+import { Table, InputGroup, Form, Button, Modal, Row, Col } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Sellerlist = () => {
   const [usersRaw, setUsersRaw] = useState([]);
   const [users, setUsers] = useState([]);
   const [searchText, setSearchText] = useState(""); //  เก็บข้อความที่พิมพ์
+  const [lgShow, setLgShow] = useState(false); //modal
+  const [selectedUser, setSelectedUser] = useState(null);
+
+
 
   useEffect(() => {
     const data = fetchUsers();
@@ -37,8 +41,89 @@ const Sellerlist = () => {
     }
   };
 
+  // ฟังก์ชันกดระงับบัญชี
+  const handleDeleteUser = () => {
+  if (!selectedUser) return;
+
+  // ลบออกจาก usersRaw
+  const updated = usersRaw.filter(u => u.id !== selectedUser.id);
+
+  setUsersRaw(updated);
+  setUsers(updated);
+
+  
+  setLgShow(false);
+};
+
+
   return (
     <>
+      {/* modalstart */}
+      <Modal
+  size="lg"
+  show={lgShow}
+  onHide={() => setLgShow(false)}
+>
+  <Modal.Header closeButton>
+    <Modal.Title>Inspect</Modal.Title>
+  </Modal.Header>
+
+  <Modal.Body>
+  {selectedUser && (
+    <>
+      <Row>
+
+        {/* โปรไฟล์ซ้าย */}
+        <Col md={6} className="d-flex justify-content-center">
+          <img
+            src={selectedUser.profile}
+            alt="profile"
+            style={{
+              width: "140px",
+              height: "140px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "3px solid #ddd",
+            }}
+          />
+        </Col>
+
+        {/* บัตรประชาชน */}
+        <Col md={6} className="d-flex justify-content-center">
+          <img
+            src={selectedUser.idCard}
+            alt="id card"
+            style={{
+              width: "260px",
+              height: "160px",
+              borderRadius: "8px",
+              objectFit: "cover",
+              border: "1px solid #ccc",
+            }}
+          />
+        </Col>
+
+      </Row>
+
+      {/* ข้อมูลตัว user */}
+      <div className="mt-4" style={{ lineHeight: "2rem" }}>
+        <p><strong>ชื่อผู้ใช้งาน :</strong> {selectedUser.name}</p>
+        <p><strong>User ID :</strong> {selectedUser.userId}</p>
+        <p><strong>บทบาท :</strong> {selectedUser.role}</p>
+        <p><strong>ที่อยู่ :</strong> {selectedUser.address ?? "-"}</p>
+        <p><strong>เบอร์ติดต่อ :</strong> {selectedUser.phone ?? "-"}</p>
+        <p><strong>Email :</strong> {selectedUser.email ?? "-"}</p>
+      </div>
+
+      {/* ปุ่มระงับบัญชี */}
+      <div className="d-flex justify-content-end mt-3" onClick={handleDeleteUser}>
+        <Button variant="danger">ระงับบัญชี &nbsp;<i class="bi bi-x-lg"></i></Button>
+      </div>
+    </>
+  )}
+</Modal.Body>
+</Modal>
+      {/* -----modalend--- */}
       <div className="d-flex justify-content-between w-75 m-auto mt-5">
         <div>
           <h1>Userlist</h1>
@@ -97,7 +182,13 @@ const Sellerlist = () => {
                   <td>{user.name}</td>
                   <td>{user.role}</td>
                   <td>
-                    <Button variant="warning">
+                    <Button
+                      variant="warning"
+                      onClick={() => {
+                        setSelectedUser(user); // เก็บข้อมูลคนที่กด
+                        setLgShow(true);       // เปิด modal
+                      }}
+                    >
                       Inspect <i className="bi bi-search"></i>
                     </Button>
                   </td>

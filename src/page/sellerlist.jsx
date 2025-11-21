@@ -137,7 +137,10 @@ const Sellerlist = () => {
                 <p><strong>ที่อยู่ :</strong> {selectedUser.address ?? "-"}</p>
                 <p><strong>เบอร์ติดต่อ :</strong> {selectedUser.phone ?? "-"}</p>
                 <p><strong>Email :</strong> {selectedUser.email ?? "-"}</p>
+                {selectedUser.role === "Seller" && (
                 <a href={VerifyDoc} download >ดาวน์โหลดเอกสารยืนยันตัวตนคนขาย</a>
+                )}
+
               </div>
 
               {/* ปุ่มระงับบัญชี */}

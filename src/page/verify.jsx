@@ -1,8 +1,8 @@
-import AdminNavbar from "../componants/adminnavbar";
 import { useEffect, useState } from "react";
-import { fetchUsers } from "../Data/UserData";
+import { fetchVerifyUsers } from "../Data/VerifyData";
 import { Table, InputGroup, Form, Button, Modal, Row, Col } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import VerifyDoc from '../assets/verifydocument.pdf'
 
 const Verify = () => {
     

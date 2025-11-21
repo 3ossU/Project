@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "../componants/adminnavbar";
 import { fetchUsers } from "../Data/UserData";
 import { Table, InputGroup, Form, Button, Modal, Row, Col } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';

@@ -3,6 +3,7 @@ import AdminNavbar from "../componants/adminnavbar";
 import { fetchUsers } from "../Data/UserData";
 import { Table, InputGroup, Form, Button, Modal, Row, Col } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import VerifyDoc from '../assets/verifydocument.pdf'
 
 const Sellerlist = () => {
   const [usersRaw, setUsersRaw] = useState([]);
@@ -112,7 +113,7 @@ const Sellerlist = () => {
                 </Col>
 
                 {/* บัตรประชาชน */}
-                <Col md={6} className="d-flex justify-content-center">
+                {/* <Col md={6} className="d-flex justify-content-center">
                   <img
                     src={selectedUser.idCard}
                     alt="id card"
@@ -124,7 +125,7 @@ const Sellerlist = () => {
                       border: "1px solid #ccc",
                     }}
                   />
-                </Col>
+                </Col> */}
 
               </Row>
 
@@ -136,6 +137,7 @@ const Sellerlist = () => {
                 <p><strong>ที่อยู่ :</strong> {selectedUser.address ?? "-"}</p>
                 <p><strong>เบอร์ติดต่อ :</strong> {selectedUser.phone ?? "-"}</p>
                 <p><strong>Email :</strong> {selectedUser.email ?? "-"}</p>
+                <a href={VerifyDoc} download >ดาวน์โหลดเอกสารยืนยันตัวตนคนขาย</a>
               </div>
 
               {/* ปุ่มระงับบัญชี */}

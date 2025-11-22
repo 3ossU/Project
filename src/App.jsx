@@ -17,29 +17,37 @@ import ForwardToLogin from './page/ForwardToLogin'
 function App() {
 
   return (
-    
-    <BrowserRouter basename='/multipages/'>
-    <Routes>
-      {/* ดึงlayout */}
-      <Route element={<AdminAppLayout/>}> 
-      {/* <Route path='buyerlist' element={<BuyerList/>}/> */}
-      <Route path='sellerlist' element={<Sellerlist/>}/>
-      <Route path='stat' element={<Stat/>}/>
-      <Route path='verify' element={<Verify/>}/>
-      {/* <Route path='*' element={<ForwardToLogin />} /> */}
-      </Route>
-      <Route element={<UserAppLayout/>}> 
-      <Route path='home' element={<Home/>}/>
-      <Route path='propertie' element={<Propertie/>}/>
-      <Route path='tradingguide' element={<TradingGuide/>}/>
-      <Route path='login' element={<Login/>}/>
-      {/* <Route path='*' element={<ForwardToLogin />} /> */}
-      </Route>
-    </Routes>
+
+    <BrowserRouter basename="/multipages">
+      <Routes>
+
+        {/* ADMIN */}
+        <Route path="/admin" element={<AdminAppLayout />}>
+          <Route path="sellerlist" element={<Sellerlist />} />
+          <Route path="stat" element={<Stat />} />
+          <Route path="verify" element={<Verify />} />
+        </Route>
+
+        {/* buyer */}
+        <Route path="/buyer" element={<UserAppLayout />}>
+          <Route path="home" element={<Home />} />
+          <Route path="propertie" element={<Propertie />} />
+          <Route path="tradingguide" element={<TradingGuide />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+        {/* seller */}
+        <Route path="/buyer" element={<UserAppLayout />}>
+          <Route path="home" element={<Home />} />
+          <Route path="propertie" element={<Propertie />} />
+          <Route path="tradingguide" element={<TradingGuide />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+    {/* <Route path="*" element={<ForwardToLogin />} /> */}
+      </Routes>
     </BrowserRouter>
-     
-     
-    
+
+
+
   )
 }
 

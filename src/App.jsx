@@ -23,7 +23,7 @@ function App() {
 
         {/* ADMIN */}
         <Route path="/admin" element={<AdminAppLayout />}>
-          <Route path="sellerlist" element={<Sellerlist />} />
+          <Route path="sellerlist" element={<Sellerlist />} /> {/* เปลี่ยนเป็นหน้า userlist รวมทั้ง buyer และ seller */}
           <Route path="stat" element={<Stat />} />
           <Route path="verify" element={<Verify />} />
         </Route>

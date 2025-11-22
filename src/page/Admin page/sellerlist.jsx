@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { fetchUsers } from "../Data/UserData";
+import { fetchUsers } from "../../Data/UserData";
 import { Table, InputGroup, Form, Button, Modal, Row, Col } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import VerifyDoc from '../assets/verifydocument.pdf'
+import VerifyDoc from '../../assets/verifydocument.pdf'
 
 const Sellerlist = () => {
   const [usersRaw, setUsersRaw] = useState([]);

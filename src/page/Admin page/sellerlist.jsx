@@ -88,7 +88,7 @@ const Sellerlist = () => {
         onHide={() => setLgShow(false)}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Inspect</Modal.Title>
+          <Modal.Title><strong>Inspect</strong></Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -153,7 +153,7 @@ const Sellerlist = () => {
       {/* -----modalend--- */}
       <div className="d-flex justify-content-between w-75 m-auto mt-5">
         <div>
-          <h1>Userlist</h1>
+          <h1><strong>Userlist</strong></h1>
         </div>
 
         {/* 🔍 searchbar */}

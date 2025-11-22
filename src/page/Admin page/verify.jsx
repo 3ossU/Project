@@ -84,7 +84,7 @@ const Verify = () => {
             onHide={() => setLgShow(false)}
           >
             <Modal.Header closeButton>
-              <Modal.Title>Inspect</Modal.Title>
+              <Modal.Title><strong>Verify</strong> </Modal.Title>
             </Modal.Header>
     
             <Modal.Body>
@@ -155,7 +155,7 @@ const Verify = () => {
           {/* -----modalend--- */}
           <div className="d-flex justify-content-between w-75 m-auto mt-5">
             <div>
-              <h1>Verify list</h1>
+              <h1><strong>Verify list</strong></h1>
             </div>
     
             {/* 🔍 searchbar */}

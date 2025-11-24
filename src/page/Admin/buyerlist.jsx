@@ -1,4 +1,4 @@
-import AdminNavbar from "../componants/adminnavbar";
+import AdminNavbar from "../../componants/adminnavbar";
 
 const BuyerList = () => {
     return ( 

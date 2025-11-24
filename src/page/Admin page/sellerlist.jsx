@@ -4,6 +4,7 @@ import { Table, InputGroup, Form, Button, Modal, Row, Col } from "react-bootstra
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import VerifyDoc from '../../assets/verifydocument.pdf'
 
+// เป็น userlist รวมทั้ง buyer และ seller
 const Sellerlist = () => {
   const [usersRaw, setUsersRaw] = useState([]);
   const [users, setUsers] = useState([]);
@@ -151,6 +152,8 @@ const Sellerlist = () => {
         </Modal.Body>
       </Modal>
       {/* -----modalend--- */}
+      
+      
       <div className="d-flex justify-content-between w-75 m-auto mt-5">
         <div>
           <h1><strong>Userlist</strong></h1>

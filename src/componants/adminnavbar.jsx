@@ -19,7 +19,7 @@ const AdminNavbar = () => {
 
         {/* เมนูหลัก */}
         <div className="flex items-center space-x-6 gap-5">
-          <Link to={'stat'} className='Menu text-white'>Stats</Link>
+          <Link to={'stat'} className='Menu text-white'>Statistics</Link>
           <Link to={'sellerlist'} className='Menu text-white'>Userlist</Link>
           {/* <Link to={'buyerlist'} className='Menu text-white'>BuyerList</Link> */} 
           <Link to={'verify'} className='Menu text-white'>Verify-seller</Link>

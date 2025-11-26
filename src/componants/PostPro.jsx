@@ -362,7 +362,7 @@ const PostProperty = () => {
           "success"
         );
         setTimeout(() => {
-          navigate("/homeseller");
+          navigate("/seller/homeseller");
         }, 1500);
       }
     });
@@ -539,7 +539,7 @@ const PostProperty = () => {
           <TextArea placeholder="ใส่คำอธิบายอสังหา" />
 
           <ButtonRow>
-            <CancelBtn as={Link} to="/homeseller">Cancel</CancelBtn>
+            <CancelBtn as={Link} to="/seller/homeseller">Cancel</CancelBtn>
             <ConfirmBtn onClick={handleConfirmClick}>Confirm Sale</ConfirmBtn>
           </ButtonRow>
         </FormCard>

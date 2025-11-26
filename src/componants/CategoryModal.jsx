@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/Propertie.css';
 
 // 🔹 คอมโพเนนต์ CategoryModal ใช้สำหรับเลือกประเภทของอสังหาริมทรัพย์
 const CategoryModal = ({ 
@@ -26,32 +27,29 @@ const CategoryModal = ({
 
   return (
     // 🔻 พื้นหลัง overlay คลิกแล้วปิดโมดัล
-    <div className="modal-overlay active" onClick={onClose}>
+    <div className="m-overlay active" onClick={onClose}>
       
       {/* 🔻 กล่องเนื้อหาโมดัล คลิกด้านในจะไม่ปิด */}
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="m-content" onClick={(e) => e.stopPropagation()}>
         
         {/* 🔻 ส่วนหัวโมดัล */}
-        <div className="modal-header">
+        <div className="m-header">
           หมวดหมู่
         </div>
 
         {/* 🔻 เนื้อหาแสดงรายการหมวดหมู่ทั้งหมด */}
-        <div className="modal-body">
+        <div className="m-body">
           {categories.map((category, index) => (
             <label key={index} className="category-option">
               
-              {/* ปุ่มเลือกแบบ radio */}
+              {/* ปุ่มเลือกแบบ checkbox */}
               <input
-                type="radio"
-                name="category"
+                type="checkbox"
                 value={category}
-                checked={selectedCategory === category} // เลือกตามค่าที่ถูกเลือกอยู่
+                checked={selectedCategory.includes(category)} // ตรวจสอบว่าหมวดหมู่นี้ถูกเลือกหรือไม่
                 onChange={(e) => onCategoryChange(e.target.value)} // ส่งค่าหมวดหมู่กลับไปยัง parent
+                style={{ marginRight: '8px' }}
               />
-
-              {/* วงกลม radio แบบ custom */}
-              <span className="category-radio"></span>
 
               {/* ชื่อหมวดหมู่ */}
               <span className="category-label">{category}</span>
@@ -60,7 +58,7 @@ const CategoryModal = ({
         </div>
 
         {/* 🔻 ปุ่มส่วนท้ายโมดัล */}
-        <div className="modal-footer">
+        <div className="m-footer">
           <button className="cancel-btn" onClick={onClose}>
             ยกเลิก   {/* ปิดโมดัลโดยไม่บันทึก */}
           </button>

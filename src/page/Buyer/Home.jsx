@@ -270,7 +270,7 @@ const adsData = {
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
     description: "คอนโดหรูใจกลางเมือง เริ่มต้นเพียง 2.9 ล้านบาท! พิเศษสำหรับลูกค้าใหม่ รับส่วนลดค่าโอนฟรี!",
     buttonText: "ดูรายละเอียด",
-    link: "/PropertyDetail/49",
+    link: "/buyer/propertydetail/49",
     color: "#c79b2f",
     darkColor: "#a67c00",
     shadowColor: "rgba(199, 155, 47, 0.3)"
@@ -280,7 +280,7 @@ const adsData = {
     image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=600&q=80",
     description: "บ้านเดี่ยวสวยงามในทำเลทอง ลดราคาพิเศษ 20% สำหรับเดือนนี้เท่านั้น! จองด่วนก่อนหมด!",
     buttonText: "สนใจดูบ้าน",
-    link: "/PropertyDetail/38",
+    link: "/buyer/propertydetail/38",
     color: "#e74c3c",
     darkColor: "#c0392b",
     shadowColor: "rgba(231, 76, 60, 0.3)"
@@ -289,7 +289,7 @@ const adsData = {
 
 // Property Card Component
 const PropertyCard = ({ property }) => (
-  <Card as={Link} to={`/PropertyDetail/${property.id}`}>
+  <Card as={Link} to={`/buyer/propertydetail/${property.id}`}>
     <CardImage src={property.image} alt={property.name}/>
     <CardContent>
       <CardTitle>{property.name}</CardTitle>
@@ -354,7 +354,7 @@ const Home = () => {
           <CloseButton onClick={() => handleCloseAds('right')}>×</CloseButton>
         </AdsHeader>
         <AdsContent>
-          <AdsImage src={adsData.right.image} alt="BuyerPropertyinfo" />
+          <AdsImage src={adsData.right.image} alt="buyerpropertyinfo" />
           <AdsDescription>{adsData.right.description}</AdsDescription>
           <AdsButton 
             as={Link} 
@@ -379,7 +379,7 @@ const Home = () => {
           <CloseButton onClick={() => handleCloseAds('left')}>×</CloseButton>
         </AdsHeader>
         <AdsContent>
-          <AdsImage src={adsData.left.image} alt="BuyerPropertyinfo" />
+          <AdsImage src={adsData.left.image} alt="buyerpropertyinfo" />
           <AdsDescription>{adsData.left.description}</AdsDescription>
           <AdsButton 
             as={Link} 
@@ -420,14 +420,14 @@ const Home = () => {
       <HeroSection>
         <HeroTitle>Find Your Dream Home</HeroTitle>
         <HeroSubtitle>Luxury Real Estate Tailored For You</HeroSubtitle>
-        <HeroButton as={Link} to="/propertie">VIEW PROPERTIES</HeroButton>
+        <HeroButton as={Link} to="/buyer/propertie">VIEW PROPERTIES</HeroButton>
       </HeroSection>
 
       {/* Recommended Properties Section */}
       <Section>
         <SectionHeader>
           <SectionTitle>Recommended Properties</SectionTitle>
-          <MoreDetail as={Link} to="/propertie">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/buyer/propertie">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
           <PropertyGrid properties={properties.slice(0, 4)} />
@@ -438,7 +438,7 @@ const Home = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Condos</SectionTitle>
-          <MoreDetail as={Link} to="/propertie?type=คอนโดมิเนียม">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/buyer/propertie?type=คอนโดมิเนียม">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
           <PropertyGrid properties={condoProperties.slice(0, 4)} />
@@ -449,7 +449,7 @@ const Home = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Houses</SectionTitle>
-          <MoreDetail as={Link} to="/propertie?type=บ้านเดี่ยว">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/buyer/propertie?type=บ้านเดี่ยว">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
           <PropertyGrid properties={houseProperties.slice(0, 4)} />
@@ -460,7 +460,7 @@ const Home = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Villas</SectionTitle>
-          <MoreDetail as={Link} to="/propertie?type=วิลล่า">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/buyer/propertie?type=วิลล่า">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
           <PropertyGrid properties={villaProperties.slice(0, 4)} />
@@ -471,7 +471,7 @@ const Home = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Townhouses</SectionTitle>
-          <MoreDetail as={Link} to="/propertie?type=ทาวน์เฮ้าส์">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/buyer/propertie?type=ทาวน์เฮ้าส์">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
           <PropertyGrid properties={townhouseProperties.slice(0, 4)} />

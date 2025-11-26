@@ -270,7 +270,7 @@ const adsData = {
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
     description: "คอนโดหรูใจกลางเมือง เริ่มต้นเพียง 2.9 ล้านบาท! พิเศษสำหรับลูกค้าใหม่ รับส่วนลดค่าโอนฟรี!",
     buttonText: "ดูรายละเอียด",
-    link: "/SellerPropertyinfo/12",
+    link: "/seller/sellerpropertyinfo/12",
     color: "#c79b2f",
     darkColor: "#a67c00",
     shadowColor: "rgba(199, 155, 47, 0.3)"
@@ -280,7 +280,7 @@ const adsData = {
     image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=600&q=80",
     description: "บ้านเดี่ยวสวยงามในทำเลทอง ลดราคาพิเศษ 20% สำหรับเดือนนี้เท่านั้น! จองด่วนก่อนหมด!",
     buttonText: "สนใจดูบ้าน",
-    link: "/SellerPropertyinfo/18",
+    link: "/seller/sellerpropertyinfo/18",
     color: "#e74c3c",
     darkColor: "#c0392b",
     shadowColor: "rgba(231, 76, 60, 0.3)"
@@ -316,7 +316,7 @@ const PlusIcon = styled.span`
 
 // Property Card Component
 const PropertyCard = ({ property }) => (
-  <Card as={Link} to={`/SellerPropertyinfo/${property.id}`}>
+  <Card as={Link} to={`/seller/sellerpropertyinfo/${property.id}`}>
     <CardImage src={property.image} alt={property.name}/>
     <CardContent>
       <CardTitle>{property.name}</CardTitle>
@@ -405,7 +405,7 @@ const HomeSeller = () => {
           <CloseButton onClick={() => handleCloseAds('left')}>×</CloseButton>
         </AdsHeader>
         <AdsContent>
-          <AdsImage src={adsData.left.image} alt="SellerPropertyinfo" />
+          <AdsImage src={adsData.left.image} alt="sellerpropertyinfo" />
           <AdsDescription>{adsData.left.description}</AdsDescription>
           <AdsButton 
             as={Link} 
@@ -446,14 +446,14 @@ const HomeSeller = () => {
       <HeroSection>
         <HeroTitle>Find Your Dream Home</HeroTitle>
         <HeroSubtitle>Luxury Real Estate Tailored For You</HeroSubtitle>
-        <HeroButton as={Link} to="/property">VIEW PROPERTIES</HeroButton>
+        <HeroButton as={Link} to="/seller/property">VIEW PROPERTIES</HeroButton>
       </HeroSection>
 
       {/* Recommended Properties Section */}
       <Section>
         <SectionHeader>
           <SectionTitle>Recommended Properties</SectionTitle>
-          <MoreDetail as={Link} to="/property">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/seller/property">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
             <PropertyGrid SellerData={SellerData.slice(0, 4)} />
@@ -464,7 +464,7 @@ const HomeSeller = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Condos</SectionTitle>
-          <MoreDetail as={Link} to="/property?type=คอนโดมิเนียม">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/seller/property?type=คอนโดมิเนียม">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
             <PropertyGrid SellerData={condoProperties.slice(0, 4)} />
@@ -475,7 +475,7 @@ const HomeSeller = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Houses</SectionTitle>
-          <MoreDetail as={Link} to="/property?type=บ้านเดี่ยว">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/seller/property?type=บ้านเดี่ยว">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
             <PropertyGrid SellerData={houseProperties.slice(0, 4)} />
@@ -486,7 +486,7 @@ const HomeSeller = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Villas</SectionTitle>
-          <MoreDetail as={Link} to="/property?type=วิลล่า">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/seller/property?type=วิลล่า">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
             <PropertyGrid SellerData={villaProperties.slice(0, 4)} />
@@ -497,7 +497,7 @@ const HomeSeller = () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Townhouses</SectionTitle>
-          <MoreDetail as={Link} to="/property?type=ทาวน์เฮ้าส์">more detail</MoreDetail>
+          <MoreDetail as={Link} to="/seller/property?type=ทาวน์เฮ้าส์">more detail</MoreDetail>
         </SectionHeader>
         <CardGrid>
             <PropertyGrid SellerData={townhouseProperties.slice(0, 4)} />
@@ -505,7 +505,7 @@ const HomeSeller = () => {
       </Section>
 
       {/* โพสต์ประกาศขาย */}
-      <PostPropertyButton to="/postproperty">
+      <PostPropertyButton to="/seller/postproperty">
         <PlusIcon>+</PlusIcon>
         โพสต์ประกาศขาย
       </PostPropertyButton>

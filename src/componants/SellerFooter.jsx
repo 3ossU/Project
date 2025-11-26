@@ -1,5 +1,6 @@
 import React from 'react';
 import './SellerFooter.css';
+import { Link } from 'react-router-dom';
 
 const SellerFooter = () => {
   const currentYear = new Date().getFullYear();
@@ -8,10 +9,10 @@ const SellerFooter = () => {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-links">
-          <a href="/PolicyUse">Acceptable Use Policy</a>
-          <a href="/ConditionsOf">Terms of Conditions</a>
-          <a href="/PrivacyPolicy">Privacy Policy</a>
-          <a href="/TermsSale">Terms of Sale</a>
+          <Link to = {'/seller/policyuse'}>Acceptable Use Policy</Link>
+          <Link to = {'/seller/conditionsof'}>Terms of Conditions</Link>
+          <Link to = {'/seller/privacypolicy'}>Privacy Policy</Link>
+          <Link to = {'/seller/termssale'}>Terms of Sale</Link>
         </div>
         
         <div className="copyright">

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PropertyCard = ({ property }) => {
   return (
     <Link 
-      to={`/PropertyDetail/${property.id}`} 
+      to={`/buyer/propertydetail/${property.id}`} 
       className="property-card-link" // เพิ่มคลาสสำหรับ styling
       style={{ textDecoration: 'none', color: 'inherit' }} // ลบ underline และสืบทอดสี
     >

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../assets/Propertie.css';
 
 // Reusable modal for selecting a small integer count (1,2,3,4,5+)
 const CountModal = ({
@@ -12,11 +13,11 @@ const CountModal = ({
   const options = ['1', '2', '3', '4', '5+'];
 
   return (
-    <div className="count-modal-overlay" style={overlayStyle}>
-      <div className="count-modal" style={modalStyle}>
-        <div className="count-modal-header" style={headerStyle}>{title}</div>
+    <div className="count-m-overlay" style={overlayStyle}>
+      <div className="count-m" style={modalStyle}>
+        <div className="count-m-header" style={headerStyle}>{title}</div>
 
-        <div className="count-modal-body" style={bodyStyle}>
+        <div className="count-m-body" style={bodyStyle}>
           <div style={optionsRowStyle}>
             {options.map((opt) => {
               const active = selected === opt;
@@ -37,7 +38,7 @@ const CountModal = ({
           </div>
         </div>
 
-        <div className="count-modal-footer" style={footerStyle}>
+        <div className="count-m-footer" style={footerStyle}>
           <button type="button" onClick={onClose} style={cancelBtnStyle}>ยกเลิก</button>
           <button
             type="button"

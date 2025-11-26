@@ -16,18 +16,18 @@ const PriceModal = ({
 
   return (
     // 🔻 พื้นหลัง overlay คลิกแล้วจะปิดโมดัล
-    <div className="modal-overlay active" onClick={onClose}>
+    <div className="m-overlay active" onClick={onClose}>
       
       {/* 🔻 ตัวกล่องเนื้อหาโมดัล ป้องกันไม่ให้คลิกทะลุปิด */}
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="m-content" onClick={(e) => e.stopPropagation()}>
         
         {/* 🔻 ส่วนหัวของโมดัล */}
-        <div className="modal-header">
+        <div className="m-header">
           ราคา
         </div>
 
         {/* 🔻 เนื้อหาภายในโมดัล */}
-        <div className="modal-body">
+        <div className="m-body">
 
           {/* 🔻 กล่องกรอกค่าสูงสุด */}
           <div className="price-input-group">
@@ -56,7 +56,7 @@ const PriceModal = ({
         </div>
 
         {/* 🔻 ปุ่มท้ายโมดัล */}
-        <div className="modal-footer">
+        <div className="m-footer">
           <button className="cancel-btn" onClick={onClose}>
             Cancel
           </button>

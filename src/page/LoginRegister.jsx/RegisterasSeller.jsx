@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bgImage from "../../componants/img/loginimg/loginregister.jpg";
 import logo from "../../componants/img/levalogo.svg";
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
 
 const RegisterasSeller = () => {
+  const [show, setShow] = useState(true);
+
   const navigate = useNavigate();
 
   // State สำหรับทุกช่อง
@@ -36,7 +40,7 @@ const RegisterasSeller = () => {
     setError("");
 
     // แสดงข้อความรออนุมัติ
-    setSuccessMessage("สมัครสมาชิกสำเร็จ! กรุณารอการอนุมัติ 3 วัน...");
+    setSuccessMessage(alert("รอการอนุมัติ ภายใน 3 วัน"));
 
     // ล้างฟอร์ม
     setFullname("");
@@ -48,14 +52,14 @@ const RegisterasSeller = () => {
     setPhone("");
     setFile(null);
 
-    // redirect ไปหน้า Login หลังจาก 3 วินาที (3000 ms)
+    // redirect ไปหน้า Login หลังจาก 2 วินาที (2000 ms)
     setTimeout(() => {
       navigate("/login");
-    }, 3000);
+    }, 2000);
   };
 
   return (
-    <div
+    <div 
       style={{
         width: "100vw",
         height: "100vh",
@@ -206,6 +210,7 @@ const RegisterasSeller = () => {
           </div>
         </form>
       </div>
+      
     </div>
   );
 };

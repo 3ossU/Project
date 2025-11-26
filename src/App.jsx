@@ -54,7 +54,7 @@ function App() {
           <Route path="sellerlist" element={<Sellerlist />} />
           <Route path="stat" element={<Stat />} />
           <Route path="verify" element={<Verify />} />
-          {/* <Route path='*' element={<ForwardToLogin />} /> */}
+          
         </Route>
         <Route path="buyer" element={<UserAppLayout />}>
           <Route path="home" element={<Home />} />
@@ -94,6 +94,7 @@ function App() {
           <Route path="policyuse" element={<PolicyUse />} />
           <Route path="conditionsof" element={<ConditionsOf />} />
         </Route>
+        <Route path='*' element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

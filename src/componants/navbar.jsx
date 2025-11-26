@@ -59,7 +59,7 @@ const NavBar = () => {
                 </div>
                 <div className="flex items-center p-10">
                     <button onClick={() => handleShow()}><i className="bi bi-bell fs-3 p-3 "></i></button>
-                     <Link to={'/login'}><button className="text-white btn btn-outline-light ">Log out</button></Link>
+                     <Link to={'/login'}><button className="text-white btn btn-outline-light rounded-5">Log out</button></Link>
                 </div>
             </div>
         </div>

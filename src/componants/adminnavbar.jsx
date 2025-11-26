@@ -30,7 +30,7 @@ const AdminNavbar = () => {
         </div>
       </div>
        <div className="flex items-center p-10">
-        <Link to={'/login'}><button className="text-white btn btn-outline-light ">Log out</button></Link>
+        <Link to={'/login'}><button className="text-white btn btn-outline-light rounded-5">Log out</button></Link>
         
       </div>
     </div> 
